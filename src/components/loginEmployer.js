@@ -27,12 +27,12 @@ const LoginEmployer = function ({
     shouldUnregister: false,
   });
   const onSubmit = async (formData) => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
+    // alert(JSON.stringify(config));
     const params = new URLSearchParams();
     params.append("username", formData.username);
     params.append("password", formData.password);
@@ -41,7 +41,7 @@ const LoginEmployer = function ({
       password: formData.password,
     });
     formData.isEmployer = true;
-    let res = await api.post("/login", formData, config);
+    let res = await api.post("/login", formData); //, config);
     // let res = await api.post({
     //   url: "/login",
     //   method: "method",

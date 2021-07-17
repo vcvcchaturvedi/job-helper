@@ -20,6 +20,7 @@ import DashboardCandidate from "./components/dashboardCandidate";
 import ViewAllJobs from "./components/viewAllJobs";
 export const api = axios.create({
   baseURL: "https://jobhelper-be.herokuapp.com/",
+  withCredentials: true,
 });
 
 function App() {
